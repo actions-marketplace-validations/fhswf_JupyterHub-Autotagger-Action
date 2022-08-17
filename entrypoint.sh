@@ -80,7 +80,12 @@ then
       pre_tag="$initial_version"
     fi
 else
-    log=$(git log $tag..HEAD --pretty='%B')
+    if $with_v
+    then
+      log=$(git log v$tag..HEAD --pretty='%B')
+    else
+      log=$(git log v$tag..HEAD --pretty='%B')
+    fi
 fi
 
 # get current commit hash for tag
