@@ -84,7 +84,7 @@ else
     then
       log=$(git log v$tag..HEAD --pretty='%B')
     else
-      log=$(git log v$tag..HEAD --pretty='%B')
+      log=$(git log $tag..HEAD --pretty='%B')
     fi
 fi
 
